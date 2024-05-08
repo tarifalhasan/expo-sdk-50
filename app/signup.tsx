@@ -7,11 +7,16 @@ import {
   widthPercentageToDP as wp,
 } from "react-native-responsive-screen";
 
-import { FontAwesome, Fontisto, Octicons } from "@expo/vector-icons";
+import {
+  FontAwesome,
+  FontAwesome6,
+  Fontisto,
+  Octicons,
+} from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 import { Link } from "expo-router";
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
-const SignIn = () => {
+const SignUp = () => {
   return (
     <View className="flex-1">
       <StatusBar style="dark" />
@@ -44,6 +49,18 @@ const SignIn = () => {
             style={{ height: hp(8), paddingHorizontal: hp(1.5) }}
             className=" bg-gray-100 rounded-2xl flex-row items-center gap-2"
           >
+            <FontAwesome6 name="user" size={25} className=" text-slate-950" />
+            <TextInput
+              className="flex-1 text-slate-950"
+              style={{ fontSize: hp(1.9) }}
+              placeholder="Enter Your Full name"
+              placeholderTextColor={"#A1A5C1"}
+            />
+          </View>
+          <View
+            style={{ height: hp(8), paddingHorizontal: hp(1.5) }}
+            className=" bg-gray-100 rounded-2xl flex-row items-center gap-2"
+          >
             <Fontisto name="email" size={25} className=" text-slate-950" />
             <TextInput
               className="flex-1 text-slate-950"
@@ -71,7 +88,7 @@ const SignIn = () => {
                 style={{ fontSize: hp(1.9) }}
                 className=" text-sky-500  tracking-wide font-semibold"
               >
-                Forgot password?
+                Terms of service
               </Text>
             </TouchableOpacity>
             <TouchableOpacity>
@@ -100,7 +117,7 @@ const SignIn = () => {
               style={{ fontSize: hp(2) }}
               className=" text-white font-semibold"
             >
-              Login
+              Register
             </Text>
           </TouchableOpacity>
         </View>
@@ -130,15 +147,15 @@ const SignIn = () => {
             <FontAwesome name="facebook" size={27} color="#1278F3" />
           </TouchableOpacity>
         </View>
-        <View style={{ paddingTop: hp(2) }} className="flex  items-center">
+        <View style={{ paddingVertical: hp(2) }} className="flex  items-center">
           <Text
             style={{
               fontSize: hp(1.9),
             }}
           >
-            Don’t have an account?{" "}
-            <Link className=" text-sky-600 font-semibold" href={"/signup"}>
-              Register
+            Already have an account?{" "}
+            <Link className=" text-sky-600 font-semibold" href={"/signIn"}>
+              Login
             </Link>
           </Text>
         </View>
@@ -147,4 +164,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default SignUp;
